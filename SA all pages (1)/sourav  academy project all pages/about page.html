@@ -1,0 +1,3531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sourav Academy | Learning Re-Engineered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="#">
+
+    <style>
+        /* CSS Variables for Colors and Theme */
+        :root {
+            --primary: #1a237e;
+            --primary-dark: #0d1530;
+            --primary-light: #283593;
+            --secondary: #0288d1;
+            --secondary-light: #4fc3f7;
+            --accent: #ff9800;
+            --accent-light: #ffb74d;
+            --text-dark: #263238;
+            --text-light: #546e7a;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --gray-light: #e0e0e0;
+            --gray: #9e9e9e;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+            padding-top: 50px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-light {
+            background-color: var(--bg-light);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* HEADER STYLES */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+
+            padding: 6px;
+            border: 2px solid rgba(26, 35, 126, 0.3);
+            border-radius: 50%;
+            background-color: #ffffff;
+
+        }
+
+        .logo img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 12px rgba(26, 35, 126, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 0.8rem 0;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            order: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+            margin-left: 10px;
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            font-size: 2.5rem;
+        }
+
+        .login-btn-container {
+            order: 3;
+            margin-left: auto;
+        }
+
+        .login-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.85rem 2.2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            background-color: var(--primary-light);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            order: 2;
+        }
+
+        .nav-list {
+            display: flex;
+        }
+
+        .nav-item {
+            margin-left: 1.8rem;
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.3rem 0;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .user-profile {
+            display: none;
+            align-items: center;
+            margin-left: 1.8rem;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 0.5rem;
+            background-color: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .profile-img i {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+
+        .profile-dropdown {
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-heavy);
+            width: 200px;
+            padding: 1rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .user-profile.active .profile-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .profile-dropdown a {
+            display: block;
+            padding: 0.7rem 1.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .profile-dropdown a:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+
+        .profile-dropdown a i {
+            margin-right: 0.7rem;
+            width: 20px;
+        }
+
+        /* MOBILE NAVIGATION */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 85%;
+            height: 100vh;
+            background-color: var(--white);
+            z-index: 2000;
+            transition: var(--transition);
+            box-shadow: var(--shadow-heavy);
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            left: 0;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .mobile-nav-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-nav-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-light);
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* FOOTER STYLES */
+        footer {
+            background-color: #0B3C2D;
+            color: var(--white);
+            padding-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column {
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.7rem;
+            text-align: left;
+            margin-left: 0;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .footer-column h3:after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            /* transform: translateX(-50%); */
+            width: 40%;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-column ul {
+            padding-left: 0;
+            margin-left: 0;
+            text-align: left;
+        }
+
+        .footer-column ul li a {
+            display: block;
+            text-align: left;
+        }
+
+        .footer-column .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .footer-column .contact-info i {
+            margin-right: 0.8rem;
+            color: var(--accent);
+            margin-top: 0.3rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #cfcfcf;
+        }
+
+        .footer-bottom .fa-heart {
+            color: #ff4d6d;
+            margin: 0 4px;
+        }
+
+        /* Tegnifix RGB aesthetic */
+        .footer-brand {
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 20px;
+            background: linear-gradient(90deg,
+                    rgb(0, 255, 255),
+                    rgb(138, 43, 226),
+                    rgb(255, 20, 147));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .footer-brand:hover {
+            text-shadow:
+                0 0 6px rgba(0, 255, 255, 0.6),
+                0 0 12px rgba(138, 43, 226, 0.6),
+                0 0 18px rgba(255, 20, 147, 0.6);
+        }
+
+        /* MODAL STYLES */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 500px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-heavy);
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            margin-bottom: 0;
+        }
+
+        .modal-header h2:after {
+            display: none;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        /* ==============================
+           NEW ABOUT PAGE STYLES
+        ============================== */
+
+        /* 1️⃣ Futuristic Intro Section */
+        .about-hero {
+            position: relative;
+            padding: 8rem 0 6rem;
+            background: linear-gradient(135deg, #0d1530 0%, #1a237e 50%, #0d1530 100%);
+            color: var(--white);
+            overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(2, 136, 209, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(2, 136, 209, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+
+            100% {
+                transform: translateY(50px) translateX(50px);
+            }
+        }
+
+        .floating-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--secondary-light);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--secondary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 2️⃣ Why We Exist Section */
+        .why-exist {
+            padding: 6rem 0;
+            background-color: #f9fafc;
+        }
+
+        .problem-cards {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding: 2rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .problem-cards::-webkit-scrollbar {
+            display: none;
+        }
+
+        .problem-card {
+            flex: 0 0 350px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .problem-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .problem-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 10px 20px rgba(26, 35, 126, 0.3);
+        }
+
+        .problem-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .problem-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* 3️⃣ The Learning Engine Section */
+        .learning-engine {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #0a1128 0%, #1a237e 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .engine-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .engine-title h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+        }
+
+        .engine-title h2:after {
+            background: linear-gradient(to right, var(--accent), var(--secondary-light));
+        }
+
+        .engine-title p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .engine-nodes {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+
+        .node {
+            position: absolute;
+            width: 180px;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: scale(0.8);
+            z-index: 2;
+        }
+
+        .node.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .node:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .node-1 {
+            top: 10%;
+            left: 10%;
+        }
+
+        .node-2 {
+            top: 10%;
+            right: 10%;
+        }
+
+        .node-3 {
+            top: 40%;
+            left: 5%;
+        }
+
+        .node-4 {
+            top: 40%;
+            right: 5%;
+        }
+
+        .node-5 {
+            bottom: 10%;
+            left: 20%;
+        }
+
+        .node-6 {
+            bottom: 10%;
+            right: 20%;
+        }
+
+        .node-center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 220px;
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.2), rgba(2, 136, 209, 0.2));
+            border-color: rgba(255, 152, 0, 0.4);
+        }
+
+        .node-center.visible {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .node-center:hover {
+            transform: translate(-50%, -50%) scale(1.05) !important;
+        }
+
+        .node-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+        }
+
+        .node h3 {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .node p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0;
+        }
+
+        .connection-line {
+            position: absolute;
+            background: linear-gradient(to right, rgba(255, 152, 0, 0.5), rgba(2, 136, 209, 0.5));
+            height: 2px;
+            z-index: 1;
+            transform-origin: left center;
+            transform: scaleX(0);
+            transition: transform 1s ease;
+        }
+
+        .connection-line.visible {
+            transform: scaleX(1);
+        }
+
+        /* 4️⃣ How Learning Flows Section */
+        .learning-flow {
+            padding: 6rem 0;
+            background-color: #f9fafc;
+        }
+
+        .flow-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* REMOVED THE CENTRAL VERTICAL LINE */
+
+        .flow-step {
+            display: flex;
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .flow-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .flow-step:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .flow-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .flow-step-content {
+            flex: 1;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 2;
+        }
+
+        .flow-step:nth-child(odd) .flow-step-content {
+            margin-right: 2rem;
+        }
+
+        .flow-step:nth-child(even) .flow-step-content {
+            margin-left: 2rem;
+        }
+
+        .flow-step-number {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            box-shadow: 0 10px 20px rgba(26, 35, 126, 0.3);
+        }
+
+        .flow-step:nth-child(odd) .flow-step-number {
+            right: -30px;
+        }
+
+        .flow-step:nth-child(even) .flow-step-number {
+            left: -30px;
+        }
+
+        .flow-step-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .flow-step-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* 5️⃣ What Makes Us Different Section */
+        .what-makes-different {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #0d1530 0%, #1a237e 100%);
+            color: var(--white);
+        }
+
+        .different-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .different-text {
+            flex: 1;
+        }
+
+        .different-text h2 {
+            text-align: left;
+            color: var(--white);
+        }
+
+        .different-text h2:after {
+            left: 0;
+            transform: translateX(0);
+            background: linear-gradient(to right, var(--accent), var(--secondary-light));
+        }
+
+        .different-text p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .different-blocks {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .different-block {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .different-block.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .different-block:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            border-color: rgba(255, 152, 0, 0.3);
+        }
+
+        .different-block h3 {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .different-block h3 i {
+            color: var(--accent);
+        }
+
+        .different-block p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0;
+        }
+
+        /* 6️⃣ Vision for the Future Section */
+        .vision-future {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #0a0f1f 0%, #0d1530 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-sweep {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(2, 136, 209, 0.1) 50%,
+                    transparent 100%);
+            animation: lightSweep 8s infinite linear;
+        }
+
+        @keyframes lightSweep {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .vision-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .vision-content h2 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .vision-content h2:after {
+            display: none;
+        }
+
+        .vision-content p {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .vision-statement {
+            font-size: 2rem !important;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--accent), var(--secondary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.3 !important;
+            margin-top: 2rem;
+        }
+
+        /* ==============================
+           NEW SECTIONS (Added based on request)
+        ============================== */
+
+        /* Section 1: Hero About Section */
+        .hero-about-section {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .hero-about-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-about-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .hero-about-text.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .hero-about-text h2 {
+            text-align: left;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-about-text h2:after {
+            left: 0;
+            transform: translateX(0);
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+        }
+
+        .hero-about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-about-image {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease 0.2s;
+            position: relative;
+
+        }
+
+        .hero-about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .academy-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-heavy);
+            transition: all 0.5s ease;
+
+        }
+
+        .academy-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section 3: Courses Offered Section */
+        .courses-section {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .courses-section h2 {
+            color: var(--primary-dark);
+            margin-bottom: 3rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .course-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .course-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .course-card:hover .course-image img {
+            transform: scale(1.1);
+        }
+
+        .course-content {
+            padding: 1.8rem;
+        }
+
+        .course-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .course-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* NEW SECTION: Visionary Behind the Platform */
+        .visionary-section {
+            padding: 6rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .visionary-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .visionary-image {
+            flex: 1;
+            text-align: center;
+
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .visionary-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .founder-photo {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-heavy);
+            transition: all 0.5s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-photo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .founder-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .founder-title {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .visionary-content {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .visionary-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .visionary-content h2 {
+            text-align: left;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .visionary-content h2:after {
+            left: 0;
+            transform: translateX(0);
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+        }
+
+        .visionary-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .visionary-quote {
+            background-color: var(--white);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: var(--shadow);
+            font-style: italic;
+            position: relative;
+        }
+
+        .visionary-quote:before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--accent-light);
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        /* Section 4: Why Choose Us Section */
+        .why-choose-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #0d1530 0%, #1a237e 100%);
+            color: var(--white);
+        }
+
+        .why-choose-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .why-choose-text {
+            flex: 1;
+        }
+
+        .why-choose-text h2 {
+            text-align: left;
+            color: var(--white);
+        }
+
+        .why-choose-text h2:after {
+            left: 0;
+            transform: translateX(0);
+            background: linear-gradient(to right, var(--accent), var(--secondary-light));
+        }
+
+        .why-choose-text p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .why-choose-list {
+            flex: 1;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+
+        .benefit-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            color: var(--accent);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover .benefit-icon {
+            background: rgba(255, 152, 0, 0.2);
+            transform: scale(1.1);
+        }
+
+        .benefit-content h3 {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-content p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* ===============================
+   FACULTY SECTION
+================================ */
+
+        .faculty-section {
+            padding: 5rem 0;
+            background-color: #f9fafc;
+        }
+
+        .faculty-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        /* Wrapper */
+        .faculty-wrapper {
+            overflow: hidden;
+        }
+
+        /* Track */
+        .faculty-track {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        /* Card */
+        .faculty-card {
+            text-align: center;
+        }
+
+        .faculty-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 14px;
+            max-width: 260px;
+            margin: 0 auto 1rem;
+            height: 320px;
+            border-radius: 18px;
+            border: 2px solid rgba(26, 35, 126, 0.3);
+            ;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            display: block;
+        }
+
+
+
+
+
+        .faculty-name {
+            margin-top: 0.8rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #263238;
+        }
+
+        .faculty-subject {
+            font-size: 0.9rem;
+            color: #607d8b;
+            margin-top: 0.3rem;
+
+        }
+
+        /* Mobile Navigation Buttons */
+        .faculty-nav {
+            display: none;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .faculty-nav button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background-color: #1a237e;
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .node {
+                width: 160px;
+            }
+
+            .node-center {
+                width: 200px;
+            }
+
+            .visionary-container {
+                max-width: 900px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .different-container {
+                flex-direction: column;
+            }
+
+            .different-text h2 {
+                text-align: center;
+            }
+
+            .different-text h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            /* REMOVED THE CENTRAL LINE IN RESPONSIVE VIEW */
+
+            .flow-step {
+                flex-direction: row !important;
+                margin-left: 60px;
+            }
+
+            .flow-step-content {
+                margin: 0 !important;
+            }
+
+            .flow-step-number {
+                left: -60px !important;
+                right: auto !important;
+            }
+
+            .engine-nodes {
+                min-height: 800px;
+            }
+
+            .node {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                margin: 0 auto 2rem;
+                width: 80%;
+                max-width: 300px;
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            .node.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .node-center {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: translate(0, 0) scale(0.8) !important;
+                margin: 2rem auto;
+            }
+
+            .node-center.visible {
+                transform: translate(0, 0) scale(1) !important;
+            }
+
+            .connection-line {
+                display: none;
+            }
+
+            /* New sections responsive */
+            .hero-about-container {
+                flex-direction: column;
+            }
+
+            .hero-about-text h2 {
+                text-align: center;
+            }
+
+            .hero-about-text h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .hero-about-image {
+                order: -1;
+            }
+
+            /* Visionary section responsive */
+            .visionary-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .visionary-image,
+            .visionary-content {
+                transform: translateY(30px);
+            }
+
+            .visionary-content h2 {
+                text-align: center;
+            }
+
+            .visionary-content h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .why-choose-container {
+                flex-direction: column;
+            }
+
+            .why-choose-text h2 {
+                text-align: center;
+            }
+
+            .why-choose-text h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            /* Header Responsive */
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .hero-stat-number {
+                font-size: 2rem;
+            }
+
+            .problem-card {
+                flex: 0 0 300px;
+                padding: 2rem;
+            }
+
+            .different-blocks {
+                grid-template-columns: 1fr;
+            }
+
+            .vision-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .vision-content p {
+                font-size: 1.2rem;
+            }
+
+            .vision-statement {
+                font-size: 1.5rem !important;
+            }
+
+            /* Visionary section responsive */
+            .visionary-section {
+                padding: 4rem 0;
+            }
+
+            .founder-photo {
+                max-width: 300px;
+            }
+
+            /* New sections responsive */
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding-top: 50px;
+            }
+
+            header {
+                padding: 0.5rem 0;
+            }
+
+            .logo img {
+                height: 32px;
+            }
+
+            .hamburger {
+                font-size: 1.4rem;
+            }
+
+            .login-btn {
+                padding: 0.9rem 2.4rem;
+                font-size: 1.05rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-column h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            /* Faculty section responsive */
+            .faculty-track {
+                display: flex;
+                gap: 1.2rem;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .faculty-track::-webkit-scrollbar {
+                display: none;
+            }
+
+            .faculty-card {
+                flex: 0 0 75%;
+            }
+
+            .faculty-nav {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 3rem 0;
+            }
+
+            .about-hero {
+                padding: 5rem 0 4rem;
+                min-height: 60vh;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .problem-card {
+                flex: 0 0 280px;
+                padding: 1.8rem;
+            }
+
+            .flow-step {
+                margin-bottom: 3rem;
+            }
+
+            .flow-step-content {
+                padding: 1.5rem;
+            }
+
+            .vision-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .vision-content p {
+                font-size: 1.1rem;
+            }
+
+            .vision-statement {
+                font-size: 1.3rem !important;
+            }
+
+            /* Visionary section responsive */
+            .visionary-section {
+                padding: 3rem 0;
+            }
+
+            .founder-photo {
+                max-width: 250px;
+            }
+
+            .founder-name {
+                font-size: 1.3rem;
+            }
+
+            .founder-title {
+                font-size: 1rem;
+            }
+
+            .visionary-quote {
+                padding: 1.2rem;
+            }
+
+            /* New sections responsive */
+            .hero-about-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .commitment-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .commitment-content p {
+                font-size: 1.1rem;
+            }
+
+            .course-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .benefit-item {
+                flex-direction: column;
+            }
+
+            .benefit-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Social icon container */
+        .social-icons {
+            display: flex;
+            gap: 14px;
+        }
+
+        /* Circle shape */
+        .social-icons a {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            min-height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.12);
+            text-decoration: none;
+            padding: 0;
+        }
+
+        /* Icon base */
+        .social-icons i {
+            font-size: 18px;
+            line-height: 1;
+            display: block;
+        }
+
+        /* ✅ ORIGINAL BRAND COLORS */
+        .social-icons .fa-facebook-f {
+            color: #1877f2;
+            /* Facebook Blue */
+            font-size: 20px;
+            /* Facebook fix */
+            transform: translateX(1px);
+        }
+
+        .social-icons .fa-instagram {
+            color: #e4405f;
+            /* Instagram Pink */
+        }
+
+        .social-icons .fa-youtube {
+            color: #ff0000;
+            /* YouTube Red */
+        }
+
+        .social-icons .fa-whatsapp {
+            color: #25D366;
+            /* WhatsApp Green */
+        }
+
+        .social-icons .fa-envelope {
+            color: #d93025;
+            /* Gmail Red */
+        }
+
+        /* contact info */
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .contact-phone i {
+            color: #ff9800;
+            margin-right: 8px;
+        }
+
+        .contact-phone .divider {
+            opacity: 0.8;
+        }
+
+
+
+        /* ===============================
+   FINAL PRODUCTION HOVER FIX
+================================ */
+
+        /* Desktop devices */
+        @media (hover: hover) {
+
+            img,
+            .btn,
+            .social-icons a,
+            .course-image img,
+            .faculty-card img {
+                will-change: transform;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+            }
+
+            .social-icons a:hover,
+            .course-image img:hover,
+            .faculty-card img:hover {
+                transform: scale(1.03);
+            }
+        }
+
+        /* Touch devices – disable hover */
+        @media (hover: none) {
+
+            img:hover,
+            .btn:hover,
+            .social-icons a:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
+        }
+
+
+        /* ✅ FINAL MOBILE FOOTER CENTER FIX 
+        @media (max-width: 768px) {
+
+            footer .container {
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            footer .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            footer .footer-column {
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            footer .footer-column p {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            footer .footer-column h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            footer .social-icons {
+                justify-content: center;
+            }
+        }
+            */
+
+        /* General alignment */
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        /* Fix long text (email etc.) */
+        .contact-info li span {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* ✅ Phone numbers with two icons */
+        .contact-phone {
+            flex-direction: column;
+            /* stack numbers */
+            gap: 8px;
+        }
+
+        .contact-phone .phone-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-phone .phone-line i {
+            color: #ffb703;
+            /* theme color */
+            font-size: 14px;
+        }
+
+        .contact-phone .phone-line span {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Timing text fix */
+        .contact-info li:last-child span {
+            white-space: nowrap;
+        }
+
+
+
+        /* Mobile-only spacing fix */
+        @media (max-width: 768px) {
+
+            /* Add left padding to content containers */
+            .container {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+
+            /* Specific fix for footer columns */
+            .footer-column {
+                padding-left: 0.5rem !important;
+            }
+
+            /* Fix for contact info alignment
+            .footer-column .contact-info {
+                padding-left: 0;
+                margin-left: 0;
+            }  */
+
+            /* Ensure text has breathing room 
+            .footer-column p,
+            .footer-column li,
+            .footer-column span {
+                padding-left: 0;
+                margin-left: 0;
+            }
+                */
+
+            /* Contact phone numbers fix
+            .contact-phone {
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+                 */
+        }
+
+        /* Extra small devices */
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .footer-column {
+                padding-left: 0 !important;
+            }
+        }
+
+        /* ==============================
+   MOBILE FOOTER LEFT ALIGNMENT ONLY
+============================== */
+
+        @media (max-width: 768px) {
+
+            /* Force left alignment for all footer columns on mobile */
+            footer .footer-column {
+                text-align: left !important;
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+
+            /* Force column headings to be left aligned */
+            footer .footer-column h3 {
+                text-align: left !important;
+                display: block !important;
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            /* Move the underline to the left */
+            footer .footer-column h3::after {
+                left: 0 !important;
+                transform: translateX(0) !important;
+            }
+
+            /* Force lists and list items to left align */
+            footer .footer-column ul,
+            footer .footer-column ul li {
+                text-align: left !important;
+                justify-content: flex-start !important;
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+
+            /* Force links to be left aligned */
+            footer .footer-column ul li a {
+                text-align: left !important;
+                display: block !important;
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+
+            /* Keep social icons on the left */
+            footer .social-icons {
+                justify-content: flex-start !important;
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            /* Contact info left alignment */
+            footer .contact-info {
+                text-align: left !important;
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+
+            footer .contact-info li {
+                justify-content: flex-start !important;
+                text-align: left !important;
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            /* Contact phone specific fix */
+            footer .contact-phone {
+                justify-content: flex-start !important;
+                text-align: left !important;
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+
+            /* Paragraphs in footer */
+            footer .footer-column p {
+                text-align: left !important;
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            /* Container padding adjustment */
+            footer .container {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+        }
+
+        /* For extra small devices */
+        @media (max-width: 576px) {
+            footer .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="logo">
+                    <img src="images/sourav academy logo.png" alt="Sourav Academy Logo">
+                </div>
+
+                <div class="login-btn-container">
+                    <button class="login-btn" id="login-btn">Login / Signup</button>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="index.html#courses" class="nav-link">Courses</a></li>
+                        <li class="nav-item"><a href="index.html#test-series" class="nav-link">Test Series</a></li>
+                        <li class="nav-item"><a href="index.html#study-material" class="nav-link">Study Material</a>
+                        </li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+
+                    <div class="user-profile" id="user-profile">
+                        <div class="profile-img" id="profile-toggle">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-dropdown">
+                            <a href="#"><i class="fas fa-user-circle"></i> My Profile</a>
+                            <a href="#"><i class="fas fa-book"></i> My Courses</a>
+                            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="index.html#courses" class="mobile-nav-link">Courses</a></li>
+            <li class="mobile-nav-item"><a href="index.html#test-series" class="mobile-nav-link">Test Series</a></li>
+            <li class="mobile-nav-item"><a href="index.html#study-material" class="mobile-nav-link">Study Material</a>
+            </li>
+            <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+
+        <div style="margin-top: 3rem; padding: 1rem;">
+            <button class="login-btn" id="mobile-login-btn" style="width: 100%;">Login / Signup</button>
+        </div>
+    </div>
+
+    <!-- 1️⃣ Futuristic Intro Section -->
+    <section class="about-hero">
+        <div class="animated-bg">
+            <div class="grid-overlay"></div>
+            <div class="floating-dots" id="floating-dots"></div>
+        </div>
+
+        <div class="container hero-content">
+            <h1>From Aspiration to Uniform Your Journey Starts Here</h1>
+            <p>At Souryaveer Academy, aspirants receive comprehensive academic and physical training designed to meet
+                the
+                standards of competitive government examinations.</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">2000+</span>
+                    <span class="hero-stat-label">Students Transformed</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">100%</span>
+                    <span class="hero-stat-label">Concept Clarity Rate</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">24/7</span>
+                    <span class="hero-stat-label">System Uptime</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">500+</span>
+                    <span class="hero-stat-label">Learning Algorithms</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- NEW SECTION 1: Hero About Section -->
+    <section class="hero-about-section">
+        <div class="container">
+            <div class="hero-about-container">
+                <div class="hero-about-text">
+                    <h2>About SOURYAVEER ACADEMY</h2>
+                    <p>SOURYAVEER ACADEMY, located in the heart of Basudevpur, Bhadrak (Odisha), is one of the most
+                        trusted and result-oriented coaching institutes for defence and competitive exam aspirants.</p>
+                    <p>With a mission to build disciplined, confident, and capable youth, we provide both Physical
+                        Training and Written Coaching under one roof, ensuring holistic preparation for success in
+                        defence and government examinations.</p>
+                </div>
+                <div class="hero-about-image">
+                    <img src="images/souraveer academy img.jpeg" alt="Souryaveer Academy - Defence Training Institute"
+                        class="academy-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 2️⃣ Why We Exist Section -->
+    <section class="why-exist">
+        <div class="container">
+            <h2>Why We Exist</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">To prepare candidates for police,
+                defence, and government services through disciplined training and expert guidance.</p>
+
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>One-Size-Fits-All Teaching</h3>
+                    <p>Generic coaching methods fail to address individual learning gaps. We focus on personalized
+                        guidance to help aspirants improve where they need it most.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Fixed Pace, No Flexibility</h3>
+                    <p>Rigid study plans often limit progress. Our training ensures balanced coverage, proper revision,
+                        and sufficient time to strengthen fundamentals.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>No Performance Tracking</h3>
+                    <p>Success requires regular evaluation. We conduct frequent assessments to monitor progress and
+                        improve exam performance.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Information Overload</h3>
+                    <p>Unstructured material often creates confusion. We provide clear, syllabus-focused study resources
+                        for effective preparation.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <h3>Delayed Doubt Resolution</h3>
+                    <p>Quick doubt resolution is essential for progress. Our faculty ensures timely guidance to maintain
+                        learning momentum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ The Learning Engine Section -->
+    <section class="learning-engine">
+        <div class="container">
+            <div class="engine-title">
+                <h2>The Learning Engine</h2>
+                <p>A systematic path from concept clarity to exam confidence</p>
+            </div>
+
+            <div class="engine-nodes">
+                <!-- Connection Lines -->
+                <div class="connection-line" id="line-1"
+                    style="width: 200px; top: 25%; left: 25%; transform: rotate(45deg);"></div>
+                <div class="connection-line" id="line-2"
+                    style="width: 200px; top: 25%; right: 25%; transform: rotate(-45deg);"></div>
+                <div class="connection-line" id="line-3"
+                    style="width: 150px; top: 50%; left: 20%; transform: rotate(90deg);"></div>
+                <div class="connection-line" id="line-4"
+                    style="width: 150px; top: 50%; right: 20%; transform: rotate(-90deg);"></div>
+                <div class="connection-line" id="line-5"
+                    style="width: 250px; bottom: 20%; left: 30%; transform: rotate(-45deg);"></div>
+                <div class="connection-line" id="line-6"
+                    style="width: 250px; bottom: 20%; right: 30%; transform: rotate(45deg);"></div>
+
+                <!-- Nodes -->
+                <div class="node node-1">
+                    <div class="node-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Concept Clarity</h3>
+                    <p>Concepts explained clearly and systematically to ensure exam-ready understanding</p>
+                </div>
+
+                <div class="node node-2">
+                    <div class="node-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Practice Mapping</h3>
+                    <p>Smart practice that targets your specific weak areas</p>
+                </div>
+
+                <div class="node node-3">
+                    <div class="node-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Performance Tracking</h3>
+                    <p>Real-time analytics on progress and readiness</p>
+                </div>
+
+                <div class="node node-center">
+                    <div class="node-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Learning Engine</h3>
+                    <p>The adaptive system that powers your preparation</p>
+                </div>
+
+                <div class="node node-4">
+                    <div class="node-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Doubt Resolution</h3>
+                    <p>Quick doubt resolution with expert guidance</p>
+                </div>
+
+                <div class="node node-5">
+                    <div class="node-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Revision System</h3>
+                    <p>Optimized spaced repetition for long-term retention</p>
+                </div>
+
+                <div class="node node-6">
+                    <div class="node-icon">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <h3>Strategy & Mindset</h3>
+                    <p>Mental preparation for confident exam performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ How Learning Flows Section -->
+    <section class="learning-flow">
+        <div class="container">
+            <h2>How Learning Flows</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">A systematic path from concept clarity
+                to exam confidence</p>
+
+            <div class="flow-timeline">
+                <!-- Removed the central vertical line -->
+
+                <div class="flow-step">
+                    <div class="flow-step-content">
+                        <h3>Learn Concept</h3>
+                        <p>Clear classroom teaching explains concepts step by step using simple examples and
+                            exam-oriented explanations.</p>
+                    </div>
+                    <div class="flow-step-number">1</div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-step-content">
+                        <h3>Apply to Exam Pattern</h3>
+                        <p>Concepts are practiced through previous year and exam-pattern questions to strengthen real
+                            exam understanding.</p>
+                    </div>
+                    <div class="flow-step-number">2</div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-step-content">
+                        <h3>Practice with Intent</h3>
+                        <p>Regular practice sessions help identify mistakes and improve weak areas through focused
+                            revision.</p>
+                    </div>
+                    <div class="flow-step-number">3</div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-step-content">
+                        <h3>Measure Performance</h3>
+                        <p>Periodic tests evaluate accuracy, speed, and overall readiness according to government exam
+                            standards.</p>
+                    </div>
+                    <div class="flow-step-number">4</div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-step-content">
+                        <h3>Fix Weak Points</h3>
+                        <p>Faculty guidance helps correct weak areas through doubt clearing and targeted practice.</p>
+                    </div>
+                    <div class="flow-step-number">5</div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-step-content">
+                        <h3>Improve Rank & Confidence</h3>
+                        <p>Progressive mastery builds both competence and confidence, transforming exam anxiety into
+                            strategic advantage.</p>
+                    </div>
+                    <div class="flow-step-number">6</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ What Makes Us Different Section -->
+    <section class="what-makes-different">
+        <div class="container">
+            <div class="different-container">
+                <div class="different-text">
+                    <h2>What Makes Us Different</h2>
+                    <p>At Souryaveer Academy, we focus on disciplined preparation and result-oriented training designed
+                        specifically for government service examinations.
+                    </p>
+                    <p>Unlike traditional coaching methods that rely only on theory, we combine conceptual clarity,
+                        physical training, regular practice, and continuous evaluation to ensure complete exam
+                        readiness.
+                    </p>
+                    <a href="index.html#courses" class="btn btn-primary" style="margin-top: 2rem;">Experience The
+                        System</a>
+                </div>
+
+                <div class="different-blocks">
+                    <div class="different-block">
+                        <h3><i class="fas fa-bullseye"></i> Focused Exam Preparation</h3>
+                        <p>We follow a syllabus-oriented approach that helps aspirants concentrate on important topics
+                            required for government exam success.
+                        </p>
+                    </div>
+
+                    <div class="different-block">
+                        <h3><i class="fas fa-tachometer-alt"></i> Structured Training Plan</h3>
+                        <p>Our training follows a clear and disciplined schedule that balances learning, practice,
+                            revision, and physical preparation.
+                        </p>
+                    </div>
+
+                    <div class="different-block">
+                        <h3><i class="fas fa-chart-line"></i> Regular Assessment & Feedback</h3>
+                        <p>Frequent tests and evaluations help aspirants track progress, identify weak areas, and
+                            improve performance consistently.
+                        </p>
+                    </div>
+
+                    <div class="different-block">
+                        <h3><i class="fas fa-user-astronaut"></i> Discipline & Confidence Building</h3>
+                        <p>We focus on building mental strength, discipline, and confidence required to perform well in
+                            competitive government examinations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6️⃣ Vision for the Future Section -->
+    <section class="vision-future">
+        <div class="vision-sweep"></div>
+
+        <div class="container vision-content">
+            <h2>Vision for the Future</h2>
+            <p>To become a trusted institute guiding aspirants towards successful government service careers through
+                disciplined training and focused preparation.
+            </p>
+            <p class="vision-statement">
+                "We prepare aspirants for service, responsibility, and a secure future through disciplined training."
+            </p>
+
+            <a href="index.html#contact" class="btn btn-primary" style="margin-top: 3rem;">Join The Evolution</a>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 3: Courses Offered Section -->
+    <section class="courses-section">
+        <div class="container">
+            <h2>Courses Offered</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/odisha police.jpeg" alt="Police Training">
+                    </div>
+                    <div class="course-content">
+                        <h3>Odisha Police (Constable, SI, Havildar, Sepoy)</h3>
+                        <p>Comprehensive preparation for all Odisha Police recruitment exams with physical training and
+                            written coaching.</p>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/fireman.jpeg" alt="Fireman Training">
+                    </div>
+                    <div class="course-content">
+                        <h3>Odisha Excise & Fireman</h3>
+                        <p>Specialized training for Excise department and Fireman recruitment with focus on physical
+                            endurance.</p>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/forest guard.jpeg" alt="Forest Guard Training">
+                    </div>
+                    <div class="course-content">
+                        <h3>Odisha Forest Guard & Forester</h3>
+                        <p>Complete preparation for Forest department exams including wildlife knowledge and physical
+                            tests.</p>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/constable.jpeg" alt="SSC GD Training">
+                    </div>
+                    <div class="course-content">
+                        <h3>SSC GD (Constable)</h3>
+                        <p>All-India level preparation for SSC GD Constable with focus on general knowledge and physical
+                            standards.</p>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/bfs force.jpeg" alt="Paramilitary Forces Training">
+                    </div>
+                    <div class="course-content">
+                        <h3>Paramilitary Forces — CRPF, CISF, BSF, ITBP, SSB</h3>
+                        <p>Specialized training for various paramilitary forces with rigorous physical and written
+                            preparation.</p>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/agniveer croped.jpeg" alt="Agniveer Training">
+                    </div>
+                    <div class="course-content">
+                        <h3>Agniveer – Indian Army, Airforce & Navy</h3>
+                        <p>Comprehensive training for Agniveer scheme covering all three defense services with modern
+                            techniques.</p>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/competeive exam.jpeg" alt="OSSC & OSSSC Training">
+                    </div>
+                    <div class="course-content">
+                        <h3>OSSC & OSSSC Competitive Exams</h3>
+                        <p>Complete guidance for Odisha's state commission exams with updated syllabus and mock tests.
+                        </p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="images/physical &  nutrituions.jpeg" alt="Physical & Nutrition">
+                    </div>
+                    <div class="course-content">
+                        <h3>Physical & Nutrition</h3>
+                        <p>Structured physical training and basic nutrition guidance to meet government service fitness
+                            standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Visionary Behind the Platform -->
+    <section class="visionary-section">
+        <div class="container">
+            <div class="visionary-container">
+                <div class="visionary-image">
+                    <img src="images/souraveer academy owner.jpeg" alt="Founder of Sourav Academy"
+                        class="founder-photo">
+                    <div class="founder-info">
+                        <h3 class="founder-name">Mr. Malaya Ranjan Panda</h3>
+                        <p class="founder-title">Founder & Chief Mentor</p>
+                    </div>
+                </div>
+                <div class="visionary-content">
+                    <h2>Visionary Behind the Platform</h2>
+                    <p>I am Malaya Ranjan Panda, and Souryaveer Academy was built with a clear purpose — to guide
+                        determined aspirants towards a respected career in government service through discipline,
+                        dedication, and the right preparation.
+                    </p>
+
+                    <p>Over the years, I have closely observed the challenges faced by students preparing for police,
+                        defence, and government examinations. Many aspirants have the potential to succeed, but often
+                        lack proper guidance, structured training, and consistent motivation. Souryaveer Academy was
+                        created to bridge this gap.
+                    </p>
+
+                    <div class="visionary-quote">
+                        "Success in government service exams is not about shortcuts. It is built through discipline,
+                        consistency, and the right mentorship."
+
+                    </div>
+
+                    <p>At Souryaveer Academy, my focus has always been on building strong fundamentals, physical
+                        fitness,
+                        mental confidence, and exam-oriented preparation. Every training method we follow is designed to
+                        match real examination standards and selection requirements.
+                    </p>
+
+                    <p>This institute is not just a coaching centre — it is a place where aspirants are trained to
+                        believe in themselves, stay disciplined, and prepare with confidence. My commitment is to stand
+                        with every student in their journey towards serving the nation with pride and responsibility.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Faculty Section -->
+    <section class="faculty-section">
+        <div class="container">
+            <h2>Our Faculty</h2>
+
+            <div class="faculty-wrapper">
+                <div class="faculty-track" id="facultyTrack">
+
+                    <div class="faculty-card">
+                        <img src="images/Bhaktahari Barik(sonu sir).jpeg" alt="Faculty 1">
+                        <p class="faculty-name">Mr. Bhaktahari Barik</p>
+                        <p class="faculty-subject">Reasoning, Computer</p>
+                    </div>
+
+                    <div class="faculty-card">
+                        <img src="images/Malaya Rajan Panda.jpeg" alt="Faculty 2">
+                        <p class="faculty-name">Mr. Malaya Ranjan Panda </p>
+                        <p class="faculty-subject">Mathematics, General Knowledge, Odia</p>
+                    </div>
+
+                    <div class="faculty-card">
+                        <img src="images/Pradip Kumar Das.jpeg" alt="Faculty 3">
+                        <p class="faculty-name">Mr. Pradeep Kumar Das</p>
+                        <p class="faculty-subject">English</p>
+                    </div>
+
+                    <div class="faculty-card">
+                        <img src="images/Aditya Narayan Mishra.jpeg" alt="Faculty 4">
+                        <p class="faculty-name">Mr. Aditya Narayan Mishra </p>
+                        <p class="faculty-subject">Social studies, Reasoning</p>
+                    </div>
+
+                    <div class="faculty-card">
+                        <img src="images/pradip pati.jpeg" alt="Faculty 4">
+                        <p class="faculty-name">Mr. Pradeep Pati</p>
+                        <p class="faculty-subject">Math, Science, Static GK</p>
+                    </div>
+
+                    <div class="faculty-card">
+                        <img src="images/lambodar sahoo.jpeg" alt="Faculty 4">
+                        <p class="faculty-name">Mr. Lambodar Sahoo </p>
+                        <p class="faculty-subject">Odia, Odisha GK</p>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="faculty-nav">
+                <button id="facultyPrev"><i class="fas fa-chevron-left"></i></button>
+                <button id="facultyNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 4: Why Choose Us Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="why-choose-container">
+                <div class="why-choose-text">
+                    <h2>Why Choose SOURYAVEER ACADEMY?</h2>
+                    <p>We ensure that every student receives individual attention, learns with confidence, and stays
+                        motivated throughout the journey. Our academy stands for hard work, honesty, and success. Many
+                        of our trainees have already secured positions in various defence and government sectors.</p>
+                    <p><strong>At SOURYAVEER ACADEMY, your dream becomes our mission.</strong></p>
+                </div>
+
+                <div class="why-choose-list">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Daily Physical Training</h3>
+                            <p>Focus on stamina, speed, strength & discipline with certified instructors.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Complete Written Coaching</h3>
+                            <p>Covering GK, Reasoning, Mathematics, English & Computer with expert faculty.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Regular Mock Tests</h3>
+                            <p>Based on the latest exam pattern with performance analysis.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Personal Guidance & Doubt Clearing</h3>
+                            <p>One-on-one mentorship and regular doubt clearing sessions.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Motivational Environment</h3>
+                            <p>Defence discipline and motivational sessions for peak performance.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Affordable Fees with Quality Training</h3>
+                            <p>High-quality training at reasonable fees with flexible payment options.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Success-oriented Training Plans</h3>
+                            <p>Customized training plans for every aspirant based on their strengths.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SOURYAVEER ACADEMY</h3>
+                    <p>India's leading learning platform offering quality education at affordable prices with
+                        expert faculty and comprehensive study material.</p>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com/@souryaveeracademyofficial"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/malay_ranjan_panda?igsh=dWk5aHlqeDdhZXM5/"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/183viuVeza/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=souryaveeracademyofficial@gmail.com"
+                            target="_blank">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/918018790777"><i class="fab fa-whatsapp"></i></a>
+
+
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                        <li><a href="index.html#test-series">Test Series</a></li>
+                        <li><a href="index.html#study-material">Study Material</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="#">Odisha Police </a></li>
+                        <li><a href="#">Odisha Excise & Fireman</a></li>
+                        <li><a href="#">SSC GD (Constable)</a></li>
+                        <li><a href="#">Odisha Forest Guard & Forester</a></li>
+                        <li><a href="#">OSSC & OSSSC Competitive Exams</a></li>
+                        <li><a href="#">Agniveer – Indian Army, Airforce & Navy</a></li>
+                        <li><a href="#">Paramilitary Forces — CRPF, CISF, BSF, ITBP, SSB</a></li>
+                        <li><a href="#">Physical & Nutrition</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                       <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>MLA Colony, Basudevpur, Bhadrak, Odisha – 756125</span>
+                        </li>
+                        <li class="contact-phone">
+                            <div class="phone-line">
+                                <i class="fas fa-phone"></i>
+                                <span><a href="tel:+91 8018790777">+91 8018790777</a></span>
+                            </div>
+                            <div class="phone-line">
+                                <i class="fas fa-phone"></i>
+                                <span><a href="tel:+91 9178454313">+91 9178454313</a></span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>souryaveeracademyofficial@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2025
+                    <a href="https://www.tegnifix.com" target="_blank" class="footer-brand">
+                        Tegnifix
+                    </a>.
+                    All Rights Reserved. | Designed with
+                    <i class="fas fa-heart"></i> for education
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login / Signup</h2>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password"
+                        required>
+                </div>
+
+                <div class="form-footer">
+                    <a href="#" style="color: var(--secondary);">Forgot Password?</a>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+
+                <div class="text-center" style="margin-top: 1.5rem;">
+                    <p>Don't have an account? <a href="#" style="color: var(--accent); font-weight: 600;">Sign Up</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const header = document.getElementById('header');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const loginBtn = document.getElementById('login-btn');
+        const mobileLoginBtn = document.getElementById('mobile-login-btn');
+        const loginModal = document.getElementById('login-modal');
+        const closeModal = document.getElementById('close-modal');
+        const loginForm = document.getElementById('login-form');
+        const userProfile = document.getElementById('user-profile');
+        const profileToggle = document.getElementById('profile-toggle');
+        const logoutBtn = document.getElementById('logout-btn');
+
+        // Mobile Navigation Elements
+        const mobileNav = document.getElementById('mobile-nav');
+        const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        const mobileNavClose = document.getElementById('mobile-nav-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Mobile Navigation Toggle
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            mobileNavOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileNavClose.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        mobileNavOverlay.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Login Modal
+        loginBtn.addEventListener('click', () => {
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileLoginBtn.addEventListener('click', () => {
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+        });
+
+        closeModal.addEventListener('click', () => {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        loginModal.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Login Form Submission
+        let isLoggedIn = false;
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            isLoggedIn = true;
+            loginBtn.style.display = 'none';
+            userProfile.style.display = 'flex';
+            loginModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+
+            alert('Login successful! Welcome to Sourav Academy.');
+        });
+
+        // Profile Dropdown Toggle
+        profileToggle.addEventListener('click', () => {
+            userProfile.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!userProfile.contains(e.target)) {
+                userProfile.classList.remove('active');
+            }
+        });
+
+        // Logout Functionality
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            isLoggedIn = false;
+            userProfile.style.display = 'none';
+            loginBtn.style.display = 'block';
+            userProfile.classList.remove('active');
+            alert('You have been logged out successfully.');
+        });
+
+        // ABOUT PAGE SPECIFIC JAVASCRIPT
+
+        // Create floating dots for the hero section
+        function createFloatingDots() {
+            const dotsContainer = document.getElementById('floating-dots');
+            if (!dotsContainer) return;
+
+            const dotCount = 50;
+
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+
+                // Random position
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                const size = 2 + Math.random() * 4;
+                const delay = Math.random() * 5;
+                const duration = 3 + Math.random() * 4;
+
+                dot.style.left = `${left}%`;
+                dot.style.top = `${top}%`;
+                dot.style.width = `${size}px`;
+                dot.style.height = `${size}px`;
+                dot.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Scroll animation for all elements
+        function animateOnScroll() {
+            // Existing elements
+            const elements = document.querySelectorAll('.problem-card, .node, .connection-line, .flow-step, .different-block');
+
+            // New section elements
+            const newElements = document.querySelectorAll('.hero-about-text, .hero-about-image, .course-card, .benefit-item, .visionary-image, .visionary-content');
+
+            const allElements = [...elements, ...newElements];
+
+            allElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize problem cards with staggered animation
+        function initProblemCards() {
+            const cards = document.querySelectorAll('.problem-card');
+            cards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+
+                // Make first few cards visible initially for better UX
+                if (index < 3) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, 300 + index * 100);
+                }
+            });
+        }
+
+        // Initialize engine nodes with staggered animation
+        function initEngineNodes() {
+            const nodes = document.querySelectorAll('.node');
+            const lines = document.querySelectorAll('.connection-line');
+
+            nodes.forEach((node, index) => {
+                node.style.transitionDelay = `${index * 0.2}s`;
+            });
+
+            lines.forEach((line, index) => {
+                line.style.transitionDelay = `${index * 0.3 + 0.5}s`;
+            });
+        }
+
+        // Initialize new sections with staggered animation
+        function initNewSections() {
+            // Courses cards staggered animation
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+
+            // Benefit items staggered animation
+            const benefitItems = document.querySelectorAll('.benefit-item');
+            benefitItems.forEach((item, index) => {
+                item.style.transitionDelay = `${index * 0.1}s`;
+            });
+        }
+
+        // Horizontal scroll for problem cards on desktop
+        function initHorizontalScroll() {
+            const cardsContainer = document.querySelector('.problem-cards');
+            if (!cardsContainer || window.innerWidth < 992) return;
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            cardsContainer.addEventListener('mousedown', (e) => {
+                isDown = true;
+                cardsContainer.classList.add('active');
+                startX = e.pageX - cardsContainer.offsetLeft;
+                scrollLeft = cardsContainer.scrollLeft;
+            });
+
+            cardsContainer.addEventListener('mouseleave', () => {
+                isDown = false;
+                cardsContainer.classList.remove('active');
+            });
+
+            cardsContainer.addEventListener('mouseup', () => {
+                isDown = false;
+                cardsContainer.classList.remove('active');
+            });
+
+            cardsContainer.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - cardsContainer.offsetLeft;
+                const walk = (x - startX) * 2;
+                cardsContainer.scrollLeft = scrollLeft - walk;
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingDots();
+            initProblemCards();
+            initEngineNodes();
+            initNewSections();
+            initHorizontalScroll();
+            animateOnScroll();
+
+            // Trigger initial animation for elements in view
+            setTimeout(animateOnScroll, 500);
+
+            // Make hero about section visible on load
+            setTimeout(() => {
+                document.querySelector('.hero-about-text')?.classList.add('visible');
+                document.querySelector('.hero-about-image')?.classList.add('visible');
+                document.querySelector('.visionary-image')?.classList.add('visible');
+                document.querySelector('.visionary-content')?.classList.add('visible');
+            }, 600);
+        });
+
+        // Add scroll event listener for animations
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Make problem cards always visible on mobile after load
+        window.addEventListener('load', () => {
+            if (window.innerWidth < 992) {
+                const cards = document.querySelectorAll('.problem-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 100);
+                });
+            }
+        });
+
+        // Faculty Section Navigation
+        const facultyTrack = document.getElementById("facultyTrack");
+        const prevBtn = document.getElementById("facultyPrev");
+        const nextBtn = document.getElementById("facultyNext");
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener("click", () => {
+                facultyTrack.scrollBy({
+                    left: -facultyTrack.offsetWidth * 0.8,
+                    behavior: "smooth"
+                });
+            });
+
+            nextBtn.addEventListener("click", () => {
+                facultyTrack.scrollBy({
+                    left: facultyTrack.offsetWidth * 0.8,
+                    behavior: "smooth"
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
